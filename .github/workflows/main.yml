@@ -1,4 +1,4 @@
-name: PR from develop to stage
+name: develop-stage-CreatePR
 
 on:
   schedule:
