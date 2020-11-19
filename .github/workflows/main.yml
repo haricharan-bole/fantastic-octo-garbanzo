@@ -1,11 +1,11 @@
-name: develop-stage-CreatePR
+name: develop-stage-AutoPromote
 
 on:
   schedule:
     - cron: '0/10 * * * *'
 
 jobs:
-  productionPromotion:
+  stagePromotion:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -20,3 +20,7 @@ jobs:
         with:
           branch: develop
           labels: automerge
+      - name: automerge
+        uses: "pascalgn/automerge-action@v0.12.0"
+        env:
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
