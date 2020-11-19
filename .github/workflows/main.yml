@@ -1,4 +1,4 @@
-name: develop-stage-AutoPromote
+name: develop-stage-promote
 
 on:
   schedule:
